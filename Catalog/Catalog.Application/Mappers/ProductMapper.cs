@@ -2,9 +2,9 @@
 
 namespace Catalog.Application.Mappers;
 
-public static class Mapper
+public static class ProductMapper
 {
-    private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
+    private static readonly Lazy<IMapper> Lazy = new(() =>
     {
         var config = new MapperConfiguration(cfg =>
         {
@@ -15,5 +15,5 @@ public static class Mapper
         return mapper;
     });
 
-    public static IMapper MapperExt => Lazy.Value;
+    public static IMapper Mapper => Lazy.Value;
 }

@@ -16,8 +16,7 @@
     <ProjectReference Include="..\Catalog.Core\Catalog.Core.csproj" />
   </ItemGroup>
 
-
-  <ItemGroup>
+  <ItemGroup>    
     <Folder Include="Commands\" />
   </ItemGroup>
 

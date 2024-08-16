@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-public class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery, IList<ProductResponse>>
+internal class GetAllProductsHandler : IRequestHandler<GetAllProductsQuery, IList<ProductResponse>>
 {
     private readonly IProductRepository _productRepository;
 

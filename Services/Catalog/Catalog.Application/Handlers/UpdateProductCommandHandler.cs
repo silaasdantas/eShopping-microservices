@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, bool>
+internal class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, bool>
 {
     private readonly IProductRepository _productRepository;
 

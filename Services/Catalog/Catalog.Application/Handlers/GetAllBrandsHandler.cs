@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-public class GetAllBrandsHandler : IRequestHandler<GetAllBrandsQuery, IList<BrandResponse>>
+internal class GetAllBrandsHandler : IRequestHandler<GetAllBrandsQuery, IList<BrandResponse>>
 {
     private readonly IBrandRepository _brandRepository;
 

@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-public class GetAllTypesHandler : IRequestHandler<GetAllTypesQuery, IList<TypeResponse>>
+internal class GetAllTypesHandler : IRequestHandler<GetAllTypesQuery, IList<TypeResponse>>
 {
     private readonly ITypesRepository _typesRepository;
 

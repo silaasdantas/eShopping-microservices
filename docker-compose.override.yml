@@ -19,4 +19,4 @@ services:
       - "DatabaseSettings__BrandsCollection=Brands"
       - "DatabaseSettings__TypesCollection=Types"
     ports:
-      - "8000:80"
+      - "8100:80"

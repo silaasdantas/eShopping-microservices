@@ -1,5 +1,4 @@
 using Asp.Versioning;
-using Catalog.Application.Handlers;
 using Catalog.Core.Repositories;
 using Catalog.Infrastructure.Data;
 using Catalog.Infrastructure.Repositories;
@@ -10,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
 //Add API Versioning
 builder.Services.AddApiVersioning(options =>
 {
@@ -27,13 +27,17 @@ opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Catalog
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 //Register Mediatr
-//var assemblies = new Assembly[] 
+//var assemblies = new Assembly[]
 //{
 //    Assembly.GetExecutingAssembly(),
 //    typeof(GetAllBrandsHandler).Assembly
 //};
 //builder.Services.AddMediatR(opt => opt.RegisterServicesFromAssemblies(assemblies));
-builder.Services.AddMediatR(opt => opt.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+
+var applicationAssembly = typeof(Catalog.Application.AssemblyReference).Assembly;
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(applicationAssembly));
+//builder.Services.AddMediatR(opt => opt.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 //Register Application Services
 builder.Services.AddScoped<ICatalogContext, CatalogContext>();

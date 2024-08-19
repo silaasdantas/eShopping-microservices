@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using Catalog.Application.Handlers;
 using Catalog.Core.Repositories;
 using Catalog.Infrastructure.Data;
 using Catalog.Infrastructure.Repositories;
@@ -26,6 +27,12 @@ opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Catalog
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 //Register Mediatr
+//var assemblies = new Assembly[] 
+//{
+//    Assembly.GetExecutingAssembly(),
+//    typeof(GetAllBrandsHandler).Assembly
+//};
+//builder.Services.AddMediatR(opt => opt.RegisterServicesFromAssemblies(assemblies));
 builder.Services.AddMediatR(opt => opt.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
 //Register Application Services
@@ -39,6 +46,7 @@ WebApplication app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

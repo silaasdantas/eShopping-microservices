@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-internal class DeleteProductByIdCommandHandler : IRequestHandler<DeleteProductByIdCommand, bool>
+public class DeleteProductByIdCommandHandler : IRequestHandler<DeleteProductByIdCommand, bool>
 {
     private readonly IProductRepository _productRepository;
 

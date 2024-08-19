@@ -13,6 +13,7 @@ public static class TypeContextSeed
         if (!checkBrands)
         {
             var typesData = File.ReadAllText(path);
+            //var typesData = File.ReadAllText("../Catalog.Infrastructure/Data/SeedData/types.json");
             var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
             if (types != null)
             {

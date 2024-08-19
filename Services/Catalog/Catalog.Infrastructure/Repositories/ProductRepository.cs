@@ -1,5 +1,6 @@
 ﻿using Catalog.Core.Entities;
 using Catalog.Core.Repositories;
+using Catalog.Core.Specs;
 using Catalog.Infrastructure.Data;
 using MongoDB.Driver;
 
@@ -79,6 +80,25 @@ public class ProductRepository : IProductRepository, IBrandRepository, ITypesRep
             .Find(_ => true)
             .ToListAsync();
     }
+
+    //public Task<Pagination<Product>> GetProducts(CatalogSpecParams catalogSpecParams)
+    //{
+    //    var builder = Builders<Product>.Filter;
+    //    var filter = builder.Empty;
+    //    if (!string.IsNullOrEmpty(catalogSpecParams.Search))
+    //    {
+    //        filter = filter & builder.Where(_ => _.Name.Contains(catalogSpecParams.Search, StringComparison.OrdinalIgnoreCase));
+    //    }
+    //    if (!string.IsNullOrEmpty(catalogSpecParams.BrandId))
+    //    {
+    //        var brandFilter = builder.Eq(_ => _.Brands.Id, catalogSpecParams.BrandId);
+    //    }
+
+    //    //return await _context
+    //    //   .Products
+    //    //   .Find(_ => true)
+    //    //   .ToListAsync();
+    //}
 
     public async Task<bool> UpdateProduct(Product product)
     {

@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Catalog.Application.Handlers;
 
-internal class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductResponse>
+public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ProductResponse>
 {
     private readonly IProductRepository _productRepository;
 

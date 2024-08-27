@@ -20,15 +20,15 @@ message CouponModel{
     int32 amount = 4;
 }
 
-message CreateDiscountResquest{
+message CreateDiscountRequest{
    CouponModel coupon = 1;
 }
 
-message UpdateDiscountResquest{
+message UpdateDiscountRequest{
    CouponModel coupon = 1;
 }
 
-message DeleteDiscountResquest{
+message DeleteDiscountRequest{
    CouponModel productName = 1;
 }
 

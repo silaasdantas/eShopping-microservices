@@ -1,6 +1,6 @@
-@Basket.API_HostAddress = http://localhost:5160
+@Basket.API_HostAddress = http://localhost:8002
 
-GET {{Basket.API_HostAddress}}/weatherforecast/
+GET {{Basket.API_HostAddress}}/basket/
 Accept: application/json
 
 ###

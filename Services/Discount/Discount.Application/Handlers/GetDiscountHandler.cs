@@ -6,7 +6,8 @@ using MediatR;
 
 namespace Discount.Application.Handlers;
 
-public class GetDiscountHandler(IDiscountRepository discountRepository) : IRequestHandler<GetDiscountQuery, CouponModel>
+public class GetDiscountHandler(IDiscountRepository discountRepository) 
+    : IRequestHandler<GetDiscountQuery, CouponModel>
 {
     public async Task<CouponModel> Handle(GetDiscountQuery request, CancellationToken cancellationToken)
     {

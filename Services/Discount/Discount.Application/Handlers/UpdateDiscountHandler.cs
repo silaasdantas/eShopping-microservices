@@ -7,13 +7,13 @@ using MediatR;
 
 namespace Discount.Application.Handlers;
 
-public class CreateDiscountHandler(IDiscountRepository discountRepository, IMapper mapper) 
-    : IRequestHandler<CreateDiscountCommand, CouponModel>
+public class UpdateDiscountHandler(IDiscountRepository discountRepository, IMapper mapper)
+    : IRequestHandler<UpdateDiscountCommand, CouponModel>
 {
-    public async Task<CouponModel> Handle(CreateDiscountCommand request, CancellationToken cancellationToken)
+    public async Task<CouponModel> Handle(UpdateDiscountCommand request, CancellationToken cancellationToken)
     {
         var coupon = mapper.Map<Coupon>(request);
-        await discountRepository.CreateDiscount(coupon);
+        await discountRepository.UpdateDiscount(coupon);
         return mapper.Map<CouponModel>(coupon);
     }
 }
